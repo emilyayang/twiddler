@@ -1,0 +1,36 @@
+body{
+	font-family: Roboto;
+	background: #d53369;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #cbad6d, #d53369);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.tweets{
+	border: 1px solid black;
+	justify-content: center;
+	border-radius: 20px;
+	padding: 5px;
+	text-align: center;
+}
+
+
+
+#showNewTweets {
+	height: 50px;
+1	width: 100px;
+	font-size: 20px;
+	background-color: transparent;
+	justify-content: center;
+	border-radius: 20px;
+
+
+}
+
+#tweetText {
+	height: 200px;
+	width: 200px;
+	font-size: 50px;
+	background-color: transparent;
+	justify-content: center;
+
+}

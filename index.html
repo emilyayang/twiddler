@@ -3,25 +3,44 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="twiddler.js"></script>
+    <link rel="stylesheet" type="text/css" href="twiddler.css">
   </head>
   <body>
-    <script>
-
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-
-      });
-
-    </script>
-  </body>
+    <div class="button">
+      <button type="button" id="showNewTweets"> Show new tweets </button>
+      <input id="tweetText" type="text"> <button class="submit">Add tweet</button>
+      <div class="followers-container">
+        <ul>
+          <li><a href="#shawndrost"> @shawndrost</a></li>
+          <li><a href="#sharksforcheap"> @sharksforcheap</a></li>
+          <li><a href="#mracus"> @mracus</a></li>
+          <li><a href="#douglascalhoun"> @douglascalhoun</a></li>
+        </ul>
+      </div>
+    </div>
+   </body>
 </html>
+
+<!-- 
+[ ] Show the user new tweets somehow. (You can show them automatically as they're created, or create a button that displays new tweets.)
+   // New Tweets : tweets that aren't currently displayed --- just clear out the tweet container and load the new ones.
+   // When you load the page, all the tweets were previous tweets.
+
+[x] Display the timestamps of when the tweets were created. This timestamp should reflect the actual time the tweets were created, and should not just be hardcoded.
+  // Should be a time stamp for when the tweet was created
+
+[ ] Design your interface so that you want to look at and use the product you're making.
+  // Consider the user's experience
+
+[ ]Allow the user to click on a username to see that user's timeline.
+   // Have some sort of list of the user's that is clicked on 
+
+   // Create a list of followers to easily navigate towards the user that was clicked's timeline
+   
+  // USERNAMES:
+     shawndrost
+     sharksforcheap
+     mracus
+     douglascalhoun
+ -->
