@@ -21,8 +21,6 @@ $(document).ready(function(){
     var $message = $("<div></div>");
     $message.text(tweet.message + '. ' + tweet.created_at);
     $tweet.append($message);
-
-    $tweet.text('@' + tweet.user + ': '  +  tweet.message + '. ' + tweet.created_at);
     $tweet.appendTo($body);
     index -= 1;
   }
@@ -40,29 +38,27 @@ $(document).ready(function(){
     var $message = $("<div></div>");
     $message.text(tweet.message + '. ' + tweet.created_at);
     $tweet.append($message);
-
-    // $tweet.text('@' + tweet.user + ': ' + tweet.message + '. ' + tweet.created_at);
     $tweet.insertBefore(".tweets:first");
+  });
 
-    console.log('Made it to username onlcick');
 $(".username").on("click", function(){
     console.log('Username was just clicked');
-    $("side").html("<div class='side'></div>"); //create div for side panel
+
+    $(".sidebar").html("<div class='side'></div>"); //create div for side panel
     var username = this.textContent;
-    var name = username.slice(1, username.length-2);
-    $("side").append(name);
+    var name = username.slice(1, username.length - 3); //slice off @
+    $(".side").append(name); //works//appends username to top 
+    console.log(name)
     var index = streams.users[name].length - 1;
     while(index >= 0){
-      var userTweet = streams.users[name][index];
       console.log(userTweet);
+      var userTweet = streams.users[name][index];
       var $userTweet = $("<div class ='side-tweet'></div>");
       $userTweet.text(userTweet.message + ', ' + userTweet.created_at);
-      $userTweet.appendTo(".side");
+      $userTweet.appendTo(".sidebar");
       index -= 1; 
     }
   });
-  });
-  
 });
 
 
